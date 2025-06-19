@@ -14,10 +14,10 @@ void httpErrorHandle({
       onSucess();
       break;
     case 400:
-      showSnackBar(context, jsonDecode(response.body)['msg']);
+      showErrorSnackBar(context, jsonDecode(response.body)['msg']);
       break;
     case 500:
-      showSnackBar(context, jsonDecode(response.body)['error']);
+      showErrorSnackBar(context, jsonDecode(response.body)['error']);
     default:
       showSnackBar(context, response.body);
   }
